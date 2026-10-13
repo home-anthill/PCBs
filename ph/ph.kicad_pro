@@ -78,27 +78,31 @@
       ],
       "drc_exclusions": [
         [
-          "silk_over_copper|142510000|105992500|f10d1b7a-19bd-4390-93a7-aa6b7b477ba6|75e08e03-1de5-48d8-b50b-069be1061590",
+          "silk_over_copper|142495000|106037500|f10d1b7a-19bd-4390-93a7-aa6b7b477ba6|6846550a-15d2-42e6-a06a-2520430de9d3",
           ""
         ],
         [
-          "silk_over_copper|144500000|105772500|4b968135-224a-4b58-a895-fcdb1aa7b720|75e08e03-1de5-48d8-b50b-069be1061590",
+          "silk_over_copper|143099047|107602295|b0a96c95-4157-4cb9-8563-2d0e68d65876|6846550a-15d2-42e6-a06a-2520430de9d3",
           ""
         ],
         [
-          "silk_over_copper|145070000|106264564|c1ee9ac5-5cf9-409c-b5ff-423fe01818b9|75e08e03-1de5-48d8-b50b-069be1061590",
+          "silk_over_copper|144485000|105817500|4b968135-224a-4b58-a895-fcdb1aa7b720|6846550a-15d2-42e6-a06a-2520430de9d3",
           ""
         ],
         [
-          "silk_over_copper|145412295|108165118|ca5ff75c-69e8-4ae2-8e23-f75e1df54bab|75e08e03-1de5-48d8-b50b-069be1061590",
+          "silk_over_copper|145055000|106309564|c1ee9ac5-5cf9-409c-b5ff-423fe01818b9|6846550a-15d2-42e6-a06a-2520430de9d3",
           ""
         ],
         [
-          "silk_over_copper|146890000|106264564|17c2f7ab-2c72-46db-942d-3e5b472cda06|75e08e03-1de5-48d8-b50b-069be1061590",
+          "silk_over_copper|146297295|108493809|5dfb1123-3759-4638-ad18-d7c5930b8139|6846550a-15d2-42e6-a06a-2520430de9d3",
           ""
         ],
         [
-          "silk_over_copper|147660000|104897500|66598341-b1f9-46a8-b4cd-0ae24aa075e7|75e08e03-1de5-48d8-b50b-069be1061590",
+          "silk_over_copper|146875000|106309564|17c2f7ab-2c72-46db-942d-3e5b472cda06|6846550a-15d2-42e6-a06a-2520430de9d3",
+          ""
+        ],
+        [
+          "silk_over_copper|147660000|105951958|66598341-b1f9-46a8-b4cd-0ae24aa075e7|6846550a-15d2-42e6-a06a-2520430de9d3",
           ""
         ]
       ],
@@ -119,10 +123,10 @@
         "duplicate_footprints": "warning",
         "extra_footprint": "warning",
         "footprint": "error",
-        "footprint_filters_mismatch": "ignore",
+        "footprint_filters_mismatch": "warning",
         "footprint_symbol_field_mismatch": "warning",
         "footprint_symbol_mismatch": "warning",
-        "footprint_type_mismatch": "ignore",
+        "footprint_type_mismatch": "warning",
         "hole_clearance": "error",
         "hole_to_hole": "warning",
         "holes_co_located": "warning",
@@ -136,7 +140,7 @@
         "malformed_courtyard": "error",
         "microvia_drill_out_of_range": "error",
         "mirrored_text_on_front_layer": "warning",
-        "missing_courtyard": "ignore",
+        "missing_courtyard": "warning",
         "missing_footprint": "warning",
         "missing_tuning_profile": "warning",
         "net_conflict": "warning",
@@ -163,7 +167,7 @@
         "track_segment_length": "error",
         "track_width": "error",
         "tracks_crossing": "error",
-        "tuning_profile_track_geometries": "ignore",
+        "tuning_profile_track_geometries": "warning",
         "unconnected_items": "error",
         "unresolved_variable": "error",
         "via_dangling": "warning",
@@ -713,14 +717,44 @@
       "fields_ordered": [
         {
           "group_by": false,
-          "label": "Reference Designator",
+          "label": "#",
+          "name": "${ITEM_NUMBER}",
+          "show": true
+        },
+        {
+          "group_by": false,
+          "label": "Reference",
           "name": "Reference",
           "show": true
         },
         {
           "group_by": false,
-          "label": "Part Description / Value",
+          "label": "Qty",
+          "name": "${QUANTITY}",
+          "show": true
+        },
+        {
+          "group_by": false,
+          "label": "Value",
           "name": "Value",
+          "show": true
+        },
+        {
+          "group_by": true,
+          "label": "Manufacturer",
+          "name": "Manufacturer",
+          "show": true
+        },
+        {
+          "group_by": true,
+          "label": "MPN",
+          "name": "MPN",
+          "show": true
+        },
+        {
+          "group_by": true,
+          "label": "Type",
+          "name": "Type",
           "show": true
         },
         {
@@ -730,9 +764,27 @@
           "show": false
         },
         {
-          "group_by": true,
-          "label": "Package / Footprint",
+          "group_by": false,
+          "label": "Footprint",
           "name": "Footprint",
+          "show": true
+        },
+        {
+          "group_by": false,
+          "label": "Digi-Key Part Number",
+          "name": "Digi-Key Part Number",
+          "show": true
+        },
+        {
+          "group_by": false,
+          "label": "Mouser Part Number",
+          "name": "Mouser Part Number",
+          "show": true
+        },
+        {
+          "group_by": false,
+          "label": "LCSC Part #",
+          "name": "LCSC Part #",
           "show": true
         },
         {
@@ -767,12 +819,6 @@
         },
         {
           "group_by": false,
-          "label": "Quantity",
-          "name": "${QUANTITY}",
-          "show": true
-        },
-        {
-          "group_by": false,
           "label": "PCBWay Part Number",
           "name": "PCBWay Part Number",
           "show": false
@@ -793,42 +839,18 @@
           "group_by": false,
           "label": "Supplier",
           "name": "Supplier",
-          "show": true
+          "show": false
         },
         {
           "group_by": false,
           "label": "Supplier Part Number",
           "name": "Supplier Part Number",
-          "show": true
-        },
-        {
-          "group_by": true,
-          "label": "Manufacturer",
-          "name": "Manufacturer",
-          "show": true
+          "show": false
         },
         {
           "group_by": false,
           "label": "Description",
           "name": "Description",
-          "show": false
-        },
-        {
-          "group_by": true,
-          "label": "MPN",
-          "name": "MPN",
-          "show": true
-        },
-        {
-          "group_by": true,
-          "label": "Type",
-          "name": "Type",
-          "show": true
-        },
-        {
-          "group_by": false,
-          "label": "#",
-          "name": "${ITEM_NUMBER}",
           "show": false
         },
         {
@@ -875,20 +897,8 @@
         },
         {
           "group_by": false,
-          "label": "Mouser Part Number",
-          "name": "Mouser Part Number",
-          "show": false
-        },
-        {
-          "group_by": false,
           "label": "MP",
           "name": "MP",
-          "show": false
-        },
-        {
-          "group_by": false,
-          "label": "Check_prices",
-          "name": "Check_prices",
           "show": false
         },
         {
@@ -905,24 +915,6 @@
         },
         {
           "group_by": false,
-          "label": "Availability",
-          "name": "Availability",
-          "show": false
-        },
-        {
-          "group_by": false,
-          "label": "Digi-Key Part Number",
-          "name": "Digi-Key Part Number",
-          "show": false
-        },
-        {
-          "group_by": false,
-          "label": "LCSC Part #",
-          "name": "LCSC Part #",
-          "show": false
-        },
-        {
-          "group_by": false,
           "label": "MANUFACTURER",
           "name": "MANUFACTURER",
           "show": false
@@ -930,10 +922,10 @@
       ],
       "filter_string": "",
       "group_symbols": true,
-      "include_excluded_from_bom": true,
+      "include_excluded_from_bom": false,
       "name": "",
       "sort_asc": true,
-      "sort_field": "Reference"
+      "sort_field": "${ITEM_NUMBER}"
     },
     "bus_aliases": {},
     "connection_grid_size": 50.0,

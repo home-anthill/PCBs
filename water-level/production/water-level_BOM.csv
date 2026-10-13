@@ -1,0 +1,7 @@
+"#","Reference","Qty","Value","Manufacturer","MPN","Type","Footprint","Digi-Key Part Number","Mouser Part Number","LCSC Part #","Assembly Notes"
+"1","C1,C2","2","100 nF, X7R","Yageo","CC0603KRX7R9BB104","SMT","Capacitor_SMD:C_0603_1608Metric","311-1344-1-ND","603-CC603KRX7R9BB104","C14663",""
+"2","J1","1","Conn_01x06","Würth Elektronik","61300611121","THT","Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical","732-5319-ND","710-61300611121","",""
+"3","J2,J3","2","1725656","Phoenix Contact","1725656","THT","TerminalBlock_Phoenix:TerminalBlock_Phoenix_MPT-0,5-2-2.54_1x02_P2.54mm_Horizontal","277-1273-ND","651-1725656","C3029316",""
+"4","R1","1","1 kΩ, ±1%, 0.1 W","Yageo","RC0603FR-071KL","SMT","Resistor_SMD:R_0603_1608Metric","311-1.00KHRCT-ND","603-RC0603FR-071KL","C22548",""
+"5","R2","1","100 kΩ, 0.1 W","Yageo","RC0603FR-07100KL","SMT","Resistor_SMD:R_0603_1608Metric","311-100KHRCT-ND","603-RC0603FR-07100KL","C14675",""
+"6","U1","1","SN74LVC1G17DBVR","Texas Instruments","SN74LVC1G17DBVR","SMT","Package_TO_SOT_SMD:SOT-23-5","296-11933-1-ND","595-SN74LVC1G17DBVR","C7836",""

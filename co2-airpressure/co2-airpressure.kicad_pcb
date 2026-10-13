@@ -106,8 +106,8 @@
 		(aux_axis_origin 125.48 117.5)
 		(grid_origin 125.48 117.5)
 		(pcbplotparams
-			(layerselection 0x00000000_00000000_5555555f_5755f5ff)
-			(plot_on_all_layers_selection 0x00000000_00000000_00000000_02000000)
+			(layerselection 0x00000000_00000000_55555555_5755f5ff)
+			(plot_on_all_layers_selection 0x00000000_00000000_00000000_00000000)
 			(disableapertmacros no)
 			(usegerberextensions yes)
 			(usegerberattributes yes)
@@ -2318,7 +2318,7 @@
 				(justify mirror)
 			)
 		)
-		(property "Assembly Notes" "Male 1x4 2.54 mm header, mount on bottom side, mating pins facing downward; observe pin 1."
+		(property "Assembly Notes" "Male 1x4 2.54 mm header, mount on bottom side, mating pins facing downward"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "B.Fab")

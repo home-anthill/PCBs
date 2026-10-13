@@ -1,0 +1,5 @@
+(fp_lib_table
+	(version 7)
+	(lib (name "ha-step") (type "KiCad") (uri "${KIPRJMOD}/3D_Models") (options "") (descr ""))
+	(lib (name "ha-footprints-kicad") (type "KiCad") (uri "${KIPRJMOD}/libraries/ha-footprints-kicad.pretty") (options "") (descr ""))
+)

@@ -668,7 +668,7 @@
           "show": false
         },
         {
-          "group_by": true,
+          "group_by": false,
           "label": "Footprint",
           "name": "Footprint",
           "show": true
@@ -717,12 +717,6 @@
         },
         {
           "group_by": false,
-          "label": "PCBWay Part Number",
-          "name": "PCBWay Part Number",
-          "show": false
-        },
-        {
-          "group_by": false,
           "label": "Sim.Device",
           "name": "Sim.Device",
           "show": false
@@ -731,18 +725,6 @@
           "group_by": false,
           "label": "Sim.Pins",
           "name": "Sim.Pins",
-          "show": false
-        },
-        {
-          "group_by": false,
-          "label": "Supplier",
-          "name": "Supplier",
-          "show": false
-        },
-        {
-          "group_by": false,
-          "label": "Supplier Part Number",
-          "name": "Supplier Part Number",
           "show": false
         },
         {
@@ -769,7 +751,7 @@
       "include_excluded_from_bom": true,
       "name": "",
       "sort_asc": true,
-      "sort_field": "LCSC Part #"
+      "sort_field": ""
     },
     "bus_aliases": {},
     "connection_grid_size": 50.0,

@@ -1,0 +1,137 @@
+(version 1)
+
+# KiCad 10 custom rules - plug 230 VAC / 10 A / SELV
+# Assumptions: 2 layers, 70 um finished copper, FR-4, 1.6 mm,
+# 230 VAC, pollution degree 2, overvoltage category II.
+# Rules are evaluated from bottom to top: specific rules are last.
+
+# -----------------------------------------------------------------------------
+# Low-cost PCB manufacturing limits
+# -----------------------------------------------------------------------------
+
+(rule "Minimum standard track"
+    (condition "A.Type == 'Track'")
+    (constraint track_width (min 0.20mm))
+)
+
+(rule "Minimum standard clearance"
+    (condition "A.Net != B.Net")
+    (constraint clearance (min 0.20mm))
+)
+
+(rule "Minimum mechanical drill"
+    (condition "A.Type == 'Pad' || A.Type == 'Via'")
+    (constraint hole_size (min 0.30mm))
+)
+
+(rule "Standard through vias"
+    (condition "A.Type == 'Via'")
+    (constraint hole_size (min 0.30mm) (opt 0.30mm))
+    (constraint via_diameter (min 0.60mm) (opt 0.60mm))
+    (constraint annular_width (min 0.15mm))
+    (constraint disallow micro_via blind_via buried_via)
+)
+
+(rule "PTH annular ring"
+    (condition "A.Type == 'Pad' && A.isPlated()")
+    (constraint annular_width (min 0.20mm))
+)
+
+(rule "Hole to copper manufacturing clearance"
+    (condition "(A.Type == 'Pad' || A.Type == 'Via') && A.Net != B.Net")
+    (constraint hole_clearance (min 0.33mm))
+)
+
+(rule "Hole to hole manufacturing clearance"
+    (condition "(A.Type == 'Pad' || A.Type == 'Via') && (B.Type == 'Pad' || B.Type == 'Via')")
+    (constraint hole_to_hole (min 0.50mm))
+)
+
+(rule "Copper to board edge"
+    (condition "A.Type == 'Track' || A.Type == 'Via' || A.Type == 'Pad' || A.Type == 'Zone'")
+    (constraint edge_clearance (min 0.50mm))
+)
+
+(rule "Production silkscreen"
+    (layer "?.Silkscreen")
+    (constraint text_thickness (min 0.15mm))
+    (constraint text_height (min 0.80mm))
+)
+
+# -----------------------------------------------------------------------------
+# SELV and auxiliary-current routing
+# -----------------------------------------------------------------------------
+
+(rule "SELV 5 V power width"
+    (condition "A.Type == 'Track' && (A.NetName == 'VBUS' || A.NetName == 'GND')")
+    (constraint track_width (min 0.60mm) (opt 1.00mm))
+)
+
+# IRM-05-5 input branch: approximately 0.08 A at 230 VAC.
+(rule "AC auxiliary supply width"
+    (condition "A.Type == 'Track' && A.NetName == '/L - after fuse 1'")
+    (constraint track_width (min 0.80mm) (opt 1.00mm))
+)
+
+# /N is shared by the 10 A pass-through and by low-current branches.
+# This rule permits the U1/MOV/snubber branches; the J1.2-to-J2.2 path is
+# selected separately by the more-specific rule below.
+(rule "Neutral auxiliary branch width"
+    (condition "A.Type == 'Track' && A.NetName == '/N (Neutral)'")
+    (constraint track_width (min 0.80mm) (opt 1.00mm))
+)
+
+(rule "Snubber internal width"
+    (condition "A.Type == 'Track' && A.NetName == 'Net-(CS1-Pad1)'")
+    (constraint track_width (min 0.50mm) (opt 0.80mm))
+)
+
+# -----------------------------------------------------------------------------
+# 10 A paths on 70 um copper
+# -----------------------------------------------------------------------------
+
+# 2.0 mm is an absolute short-neck minimum, not the preferred long-run width.
+# Use 4 mm or more for continuous routes; 6 mm is the project target.
+(rule "10 A live switched and PE neck minimum"
+    (condition "A.Type == 'Track' && (A.NetName == '/L (Live{slash}Line)' || A.NetName == '/L - after fuse 2' || A.NetName == '/PE (Protective Earth{slash}Ground)' || A.NetName == 'Net-(J2-Pin_1)')")
+    (constraint track_width (min 2.00mm) (opt 6.00mm))
+    (constraint connection_width (min 2.00mm))
+)
+
+# Only the path between the input and output neutral terminals carries the
+# external load current. Branches to U1, MOV1, MOV2 and CS1 do not carry 10 A.
+(rule "10 A neutral pass-through"
+    (condition "A.fromTo('J1-2', 'J2-2')")
+    (constraint track_width (min 2.00mm) (opt 6.00mm))
+    (constraint connection_width (min 2.00mm))
+)
+
+# High-current THT pads must connect directly to copper zones without thermal
+# spokes. K1 uses both parallel terminals of each high-capacity contact.
+(rule "Solid zones on high-current pads"
+    (condition "A.Type == 'Pad' && (A.Reference == 'J1' || A.Reference == 'J2' || A.Reference == 'FH2' || (A.Reference == 'K1' && (A.Pad_Number == '3' || A.Pad_Number == '4' || A.Pad_Number == '5' || A.Pad_Number == '6')))" )
+    (constraint zone_connection solid)
+)
+
+# -----------------------------------------------------------------------------
+# 230 VAC insulation rules
+# HV group: L, protected L, switched L, N, PE and the internal snubber node.
+# -----------------------------------------------------------------------------
+
+# Separation between different mains-voltage conductors.
+# Minimum clearance: 1.5 mm.
+# Minimum creepage: 2.5 mm for PD2, FR-4 group IIIa, <= 2000 m.
+(rule "Mains conductor separation"
+    (condition "((A.NetName == '/L (Live{slash}Line)' || A.NetName == '/L - after fuse 1' || A.NetName == '/L - after fuse 2' || A.NetName == '/N (Neutral)' || A.NetName == '/PE (Protective Earth{slash}Ground)' || A.NetName == 'Net-(J2-Pin_1)' || A.NetName == 'Net-(CS1-Pad1)') && (B.NetName == '/L (Live{slash}Line)' || B.NetName == '/L - after fuse 1' || B.NetName == '/L - after fuse 2' || B.NetName == '/N (Neutral)' || B.NetName == '/PE (Protective Earth{slash}Ground)' || B.NetName == 'Net-(J2-Pin_1)' || B.NetName == 'Net-(CS1-Pad1)') && A.Net != B.Net)")
+    (constraint clearance (min 1.50mm))
+    (constraint creepage (min 2.50mm))
+)
+
+# Reinforced separation between every known hazardous conductor and all other
+# copper. This automatically protects present and future SELV nets without
+# depending on project net-class names.
+(rule "HV to non-HV reinforced isolation"
+    (condition "(((A.NetName == '/L (Live{slash}Line)' || A.NetName == '/L - after fuse 1' || A.NetName == '/L - after fuse 2' || A.NetName == '/N (Neutral)' || A.NetName == '/PE (Protective Earth{slash}Ground)' || A.NetName == 'Net-(J2-Pin_1)' || A.NetName == 'Net-(CS1-Pad1)') && !(B.NetName == '/L (Live{slash}Line)' || B.NetName == '/L - after fuse 1' || B.NetName == '/L - after fuse 2' || B.NetName == '/N (Neutral)' || B.NetName == '/PE (Protective Earth{slash}Ground)' || B.NetName == 'Net-(J2-Pin_1)' || B.NetName == 'Net-(CS1-Pad1)')) || ((B.NetName == '/L (Live{slash}Line)' || B.NetName == '/L - after fuse 1' || B.NetName == '/L - after fuse 2' || B.NetName == '/N (Neutral)' || B.NetName == '/PE (Protective Earth{slash}Ground)' || B.NetName == 'Net-(J2-Pin_1)' || B.NetName == 'Net-(CS1-Pad1)') && !(A.NetName == '/L (Live{slash}Line)' || A.NetName == '/L - after fuse 1' || A.NetName == '/L - after fuse 2' || A.NetName == '/N (Neutral)' || A.NetName == '/PE (Protective Earth{slash}Ground)' || A.NetName == 'Net-(J2-Pin_1)' || A.NetName == 'Net-(CS1-Pad1)')))" )
+    (constraint clearance (min 8.00mm))
+    (constraint creepage (min 8.00mm))
+)

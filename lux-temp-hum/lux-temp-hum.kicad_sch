@@ -2761,7 +2761,7 @@
 				)
 			)
 		)
-		(property "Assembly Notes" ""
+		(property "Assembly Notes" "Follow Sensirion handling instructions. No board washing after assembly. Keep the sensing opening free of flux, cleaning agents, adhesives and conformal coating. Do not solder the central die pad."
 			(at 144.78 113.03 0)
 			(hide yes)
 			(show_name no)
@@ -2981,7 +2981,7 @@
 				)
 			)
 		)
-		(property "Assembly Notes" "Male 1x4 2.54 mm header, mount on bottom side, mating pins facing downward; observe pin 1."
+		(property "Assembly Notes" "Male 1x4 2.54 mm header, mount on bottom side, mating pins facing downward"
 			(at 91.44 68.58 0)
 			(hide yes)
 			(show_name no)

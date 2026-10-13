@@ -106,8 +106,8 @@
 		(aux_axis_origin 125.48 117.5)
 		(grid_origin 125.48 117.5)
 		(pcbplotparams
-			(layerselection 0x00000000_00000000_5555555f_5755f5ff)
-			(plot_on_all_layers_selection 0x00000000_00000000_00000000_02000000)
+			(layerselection 0x00000000_00000000_55555555_5755f5ff)
+			(plot_on_all_layers_selection 0x00000000_00000000_00000000_00000000)
 			(disableapertmacros no)
 			(usegerberextensions yes)
 			(usegerberattributes yes)
@@ -231,7 +231,7 @@
 				)
 			)
 		)
-		(property "Digi-Key Part Number" ""
+		(property "Digi-Key Part Number" "490-1011-1-ND"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -244,7 +244,7 @@
 				)
 			)
 		)
-		(property "Mouser Part Number" ""
+		(property "Mouser Part Number" "81-BLM11A121S"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -257,7 +257,7 @@
 				)
 			)
 		)
-		(property "LCSC Part #" ""
+		(property "LCSC Part #" "C76892"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -784,7 +784,7 @@
 				)
 			)
 		)
-		(property "Digi-Key Part Number" ""
+		(property "Digi-Key Part Number" "277-1273-ND"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -797,7 +797,7 @@
 				)
 			)
 		)
-		(property "Mouser Part Number" ""
+		(property "Mouser Part Number" "651-1725656"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -810,7 +810,7 @@
 				)
 			)
 		)
-		(property "LCSC Part #" ""
+		(property "LCSC Part #" "C3029316"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -2657,6 +2657,19 @@
 				)
 			)
 		)
+		(property "PCBWay Part Number" ""
+			(at 0 0 270)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "bf798c4b-1f65-479c-90c7-b4efa93fd58f")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "C_*")
 		(path "/a8dfeb8a-0670-4c09-a7b6-dddac1cc8bd2")
 		(sheetname "/")
@@ -2887,6 +2900,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "18d7636f-dafc-4635-a5f0-33da341c896a")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "PCBWay Part Number" ""
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "596cf618-5877-41f0-9824-334cc12fccfb")
 			(effects
 				(font
 					(size 1 1)
@@ -3959,6 +3985,19 @@
 				)
 			)
 		)
+		(property "PCBWay Part Number" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "3dc2b01d-c6e1-41af-8a53-45eea68afc9d")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "C_*")
 		(path "/8b1deeaa-6c3c-4de1-b854-c4c795612b22")
 		(sheetname "/")
@@ -4211,6 +4250,20 @@
 				(justify mirror)
 			)
 		)
+		(property "PCBWay Part Number" ""
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "B.Fab")
+			(hide yes)
+			(uuid "0dfced80-d4b8-440e-bbcf-3751f90cc9ef")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+				(justify mirror)
+			)
+		)
 		(property ki_fp_filters "Pin* Test*")
 		(path "/5f0007af-4737-4f69-919b-954c13f6295a")
 		(sheetname "/")
@@ -4221,7 +4274,7 @@
 				(pins "1")
 			)
 		)
-		(attr exclude_from_pos_files exclude_from_bom)
+		(attr exclude_from_bom)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -4311,7 +4364,7 @@
 				(justify mirror)
 			)
 		)
-		(property "Description" "Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)"
+		(property "Description" "Generic connector, single row, 01x04"
 			(at 0 0 0)
 			(layer "B.Fab")
 			(hide yes)
@@ -4379,7 +4432,7 @@
 				(justify mirror)
 			)
 		)
-		(property "Assembly Notes" "Male 1x4 2.54 mm header, mount on bottom side, mating pins facing downward; observe pin 1."
+		(property "Assembly Notes" "Male 1x4 2.54 mm header, mount on bottom side, mating pins facing downward"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "B.Fab")
@@ -4435,7 +4488,7 @@
 				(justify mirror)
 			)
 		)
-		(property "LCSC Part #" ""
+		(property "LCSC Part #" "C3330291"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "B.Fab")
@@ -6356,39 +6409,6 @@
 		)
 	)
 	(zone
-		(net "/SCL")
-		(layer "B.Cu")
-		(hatch none 0.1)
-		(priority 30001)
-		(attr
-			(teardrop
-				(type padvia)
-			)
-		)
-		(connect_pads yes
-			(clearance 0)
-		)
-		(min_thickness 0.0254)
-		(fill yes
-			(island_removal_mode 1)
-		)
-		(polygon
-			(pts
-				(xy 128.533121 113.365253) (xy 128.745253 113.153121) (xy 128.276701 112.189595) (xy 127.436399 112.056399)
-				(xy 127.569595 112.896701)
-			)
-		)
-		(filled_polygon
-			(layer "B.Cu")
-			(pts
-				(xy 128.270677 112.18864) (xy 128.278311 112.19332) (xy 128.279367 112.195079) (xy 128.741607 113.145625)
-				(xy 128.742143 113.154564) (xy 128.739358 113.159015) (xy 128.539015 113.359358) (xy 128.530742 113.362785)
-				(xy 128.525625 113.361607) (xy 127.575079 112.899367) (xy 127.569138 112.892667) (xy 127.56864 112.890677)
-				(xy 127.43892 112.072306) (xy 127.44101 112.0636) (xy 127.448644 112.05892) (xy 127.452303 112.05892)
-			)
-		)
-	)
-	(zone
 		(net "/SDA")
 		(layer "B.Cu")
 		(hatch none 0.1)
@@ -6418,6 +6438,39 @@
 				(xy 128.742143 115.694564) (xy 128.739358 115.699015) (xy 128.539015 115.899358) (xy 128.530742 115.902785)
 				(xy 128.525625 115.901607) (xy 127.575079 115.439367) (xy 127.569138 115.432667) (xy 127.56864 115.430677)
 				(xy 127.43892 114.612306) (xy 127.44101 114.6036) (xy 127.448644 114.59892) (xy 127.452303 114.59892)
+			)
+		)
+	)
+	(zone
+		(net "/SCL")
+		(layer "B.Cu")
+		(hatch none 0.1)
+		(priority 30001)
+		(attr
+			(teardrop
+				(type padvia)
+			)
+		)
+		(connect_pads yes
+			(clearance 0)
+		)
+		(min_thickness 0.0254)
+		(fill yes
+			(island_removal_mode 1)
+		)
+		(polygon
+			(pts
+				(xy 128.533121 113.365253) (xy 128.745253 113.153121) (xy 128.276701 112.189595) (xy 127.436399 112.056399)
+				(xy 127.569595 112.896701)
+			)
+		)
+		(filled_polygon
+			(layer "B.Cu")
+			(pts
+				(xy 128.270677 112.18864) (xy 128.278311 112.19332) (xy 128.279367 112.195079) (xy 128.741607 113.145625)
+				(xy 128.742143 113.154564) (xy 128.739358 113.159015) (xy 128.539015 113.359358) (xy 128.530742 113.362785)
+				(xy 128.525625 113.361607) (xy 127.575079 112.899367) (xy 127.569138 112.892667) (xy 127.56864 112.890677)
+				(xy 127.43892 112.072306) (xy 127.44101 112.0636) (xy 127.448644 112.05892) (xy 127.452303 112.05892)
 			)
 		)
 	)

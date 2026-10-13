@@ -2247,17 +2247,6 @@
 				)
 			)
 		)
-		(property "PCBWay Part Number" ""
-			(at 154.94 81.28 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Sim.Device" ""
 			(at 154.94 81.28 90)
 			(hide yes)
@@ -2270,28 +2259,6 @@
 			)
 		)
 		(property "Sim.Pins" ""
-			(at 154.94 81.28 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Supplier" ""
-			(at 154.94 81.28 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Supplier Part Number" ""
 			(at 154.94 81.28 90)
 			(hide yes)
 			(show_name no)
@@ -2620,17 +2587,6 @@
 				)
 			)
 		)
-		(property "PCBWay Part Number" ""
-			(at 165.1 110.49 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Sim.Device" ""
 			(at 165.1 110.49 0)
 			(hide yes)
@@ -2643,28 +2599,6 @@
 			)
 		)
 		(property "Sim.Pins" ""
-			(at 165.1 110.49 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Supplier" ""
-			(at 165.1 110.49 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Supplier Part Number" ""
 			(at 165.1 110.49 0)
 			(hide yes)
 			(show_name no)
@@ -2837,17 +2771,6 @@
 				)
 			)
 		)
-		(property "PCBWay Part Number" ""
-			(at 154.94 68.58 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Sim.Device" ""
 			(at 154.94 68.58 0)
 			(hide yes)
@@ -2860,28 +2783,6 @@
 			)
 		)
 		(property "Sim.Pins" ""
-			(at 154.94 68.58 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Supplier" ""
-			(at 154.94 68.58 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Supplier Part Number" ""
 			(at 154.94 68.58 0)
 			(hide yes)
 			(show_name no)
@@ -3049,17 +2950,6 @@
 				)
 			)
 		)
-		(property "PCBWay Part Number" ""
-			(at 134.62 110.49 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Sim.Device" ""
 			(at 134.62 110.49 90)
 			(hide yes)
@@ -3072,28 +2962,6 @@
 			)
 		)
 		(property "Sim.Pins" ""
-			(at 134.62 110.49 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Supplier" ""
-			(at 134.62 110.49 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Supplier Part Number" ""
 			(at 134.62 110.49 90)
 			(hide yes)
 			(show_name no)
@@ -3341,17 +3209,6 @@
 				)
 			)
 		)
-		(property "PCBWay Part Number" ""
-			(at 177.8 81.28 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Sim.Device" ""
 			(at 177.8 81.28 90)
 			(hide yes)
@@ -3364,28 +3221,6 @@
 			)
 		)
 		(property "Sim.Pins" ""
-			(at 177.8 81.28 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Supplier" ""
-			(at 177.8 81.28 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Supplier Part Number" ""
 			(at 177.8 81.28 90)
 			(hide yes)
 			(show_name no)
@@ -3555,17 +3390,6 @@
 				)
 			)
 		)
-		(property "PCBWay Part Number" ""
-			(at 142.24 116.84 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Sim.Device" ""
 			(at 142.24 116.84 0)
 			(hide yes)
@@ -3578,28 +3402,6 @@
 			)
 		)
 		(property "Sim.Pins" ""
-			(at 142.24 116.84 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Supplier" ""
-			(at 142.24 116.84 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Supplier Part Number" ""
 			(at 142.24 116.84 0)
 			(hide yes)
 			(show_name no)
@@ -4081,17 +3883,6 @@
 				)
 			)
 		)
-		(property "PCBWay Part Number" ""
-			(at 177.8 68.58 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Sim.Device" ""
 			(at 177.8 68.58 0)
 			(hide yes)
@@ -4104,28 +3895,6 @@
 			)
 		)
 		(property "Sim.Pins" ""
-			(at 177.8 68.58 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Supplier" ""
-			(at 177.8 68.58 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Supplier Part Number" ""
 			(at 177.8 68.58 0)
 			(hide yes)
 			(show_name no)
@@ -4295,17 +4064,6 @@
 				)
 			)
 		)
-		(property "PCBWay Part Number" ""
-			(at 90.17 105.41 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Sim.Device" ""
 			(at 90.17 105.41 0)
 			(hide yes)
@@ -4318,28 +4076,6 @@
 			)
 		)
 		(property "Sim.Pins" ""
-			(at 90.17 105.41 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Supplier" ""
-			(at 90.17 105.41 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Supplier Part Number" ""
 			(at 90.17 105.41 0)
 			(hide yes)
 			(show_name no)

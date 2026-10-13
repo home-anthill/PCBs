@@ -8697,7 +8697,7 @@
 				)
 			)
 		)
-		(property "Assembly Notes" "No substitution without approval"
+		(property "Assembly Notes" ""
 			(at 139.7 138.43 0)
 			(hide yes)
 			(show_name no)
@@ -9971,7 +9971,7 @@
 				)
 			)
 		)
-		(property "Assembly Notes" "Cathode pad 1 toward GND"
+		(property "Assembly Notes" ""
 			(at 175.26 38.1 0)
 			(hide yes)
 			(show_name no)
@@ -10133,7 +10133,7 @@
 				)
 			)
 		)
-		(property "Assembly Notes" "No substitution without approval"
+		(property "Assembly Notes" ""
 			(at 85.09 123.19 0)
 			(hide yes)
 			(show_name no)
@@ -10382,7 +10382,7 @@
 				)
 			)
 		)
-		(property "Assembly Notes" "No substitution without approval"
+		(property "Assembly Notes" ""
 			(at 76.2 49.53 0)
 			(hide yes)
 			(show_name no)
@@ -10798,7 +10798,7 @@
 				)
 			)
 		)
-		(property "Assembly Notes" "Cathode pad 1 toward GND"
+		(property "Assembly Notes" ""
 			(at 279.4 40.64 0)
 			(hide yes)
 			(show_name no)
@@ -10820,7 +10820,7 @@
 				)
 			)
 		)
-		(property "Digi-Key Part Number" ""
+		(property "Digi-Key Part Number" "160-1437-1-ND"
 			(at 279.4 40.64 0)
 			(hide yes)
 			(show_name no)
@@ -10831,7 +10831,7 @@
 				)
 			)
 		)
-		(property "Mouser Part Number" ""
+		(property "Mouser Part Number" "859-LTST-C190KSKT"
 			(at 279.4 40.64 0)
 			(hide yes)
 			(show_name no)
@@ -10842,7 +10842,7 @@
 				)
 			)
 		)
-		(property "LCSC Part #" ""
+		(property "LCSC Part #" "C125095"
 			(at 279.4 40.64 0)
 			(hide yes)
 			(show_name no)
@@ -13330,7 +13330,7 @@
 				)
 			)
 		)
-		(property "Assembly Notes" "Cathode pad 1 toward GND"
+		(property "Assembly Notes" ""
 			(at 231.14 40.64 0)
 			(hide yes)
 			(show_name no)
@@ -13352,7 +13352,7 @@
 				)
 			)
 		)
-		(property "Digi-Key Part Number" ""
+		(property "Digi-Key Part Number" "160-1435-1-ND"
 			(at 231.14 40.64 0)
 			(hide yes)
 			(show_name no)
@@ -13363,7 +13363,7 @@
 				)
 			)
 		)
-		(property "Mouser Part Number" ""
+		(property "Mouser Part Number" "859-LTST-C190KGKT"
 			(at 231.14 40.64 0)
 			(hide yes)
 			(show_name no)
@@ -13374,7 +13374,7 @@
 				)
 			)
 		)
-		(property "LCSC Part #" ""
+		(property "LCSC Part #" "C125094"
 			(at 231.14 40.64 0)
 			(hide yes)
 			(show_name no)
@@ -14218,7 +14218,7 @@
 				)
 			)
 		)
-		(property "Assembly Notes" "Pin 1=B, Pin 2=E, Pin 3=C"
+		(property "Assembly Notes" ""
 			(at 170.18 203.2 0)
 			(hide yes)
 			(show_name no)
@@ -14458,7 +14458,7 @@
 				)
 			)
 		)
-		(property "Assembly Notes" "THT female socket, vertical, fit on top side; observe pin 1"
+		(property "Assembly Notes" ""
 			(at 76.2 242.57 0)
 			(hide yes)
 			(show_name no)
@@ -14734,7 +14734,7 @@
 				)
 			)
 		)
-		(property "Assembly Notes" "Pin 1=B, Pin 2=E, Pin 3=C"
+		(property "Assembly Notes" ""
 			(at 219.71 203.2 0)
 			(hide yes)
 			(show_name no)
@@ -14893,7 +14893,7 @@
 				)
 			)
 		)
-		(property "Assembly Notes" "THT female socket, vertical, fit on top side; observe pin 1"
+		(property "Assembly Notes" ""
 			(at 81.28 199.39 0)
 			(hide yes)
 			(show_name no)
@@ -17970,7 +17970,7 @@
 				)
 			)
 		)
-		(property "Assembly Notes" "THT female socket, vertical, fit on top side; observe pin 1"
+		(property "Assembly Notes" ""
 			(at 125.73 245.11 0)
 			(hide yes)
 			(show_name no)

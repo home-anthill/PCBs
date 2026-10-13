@@ -1,0 +1,4 @@
+(fp_lib_table
+	(version 7)
+	(lib (name "water-level_footprints_lib") (type "KiCad") (uri "${KIPRJMOD}/libraries/water-level-footprints-kicad.pretty") (options "") (descr ""))
+)

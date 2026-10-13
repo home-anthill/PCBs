@@ -1,0 +1,199 @@
+(version 1)
+
+# KiCad 10 custom rules - plug 230 VAC / 10 A / SELV
+# Target: 2 layers, 70 um finished copper, FR-4 1.6 mm,
+# 230 VAC, pollution degree 2, overvoltage category II.
+# Rules are evaluated from bottom to top: keep specific exceptions last.
+
+(rule "Minimum standard track"
+    (condition "A.Type == 'Track'")
+    (constraint track_width (min 0.20mm))
+)
+
+(rule "Minimum standard clearance"
+    (condition "A.Net != B.Net")
+    (constraint clearance (min 0.20mm))
+)
+
+(rule "Minimum mechanical drill"
+    (condition "A.Type == 'Pad' || A.Type == 'Via'")
+    (constraint hole_size (min 0.30mm))
+)
+
+(rule "Standard through vias"
+    (condition "A.Type == 'Via'")
+    (constraint hole_size (min 0.30mm) (opt 0.30mm))
+    (constraint via_diameter (min 0.60mm) (opt 0.60mm))
+    (constraint annular_width (min 0.15mm))
+    (constraint disallow micro_via blind_via buried_via)
+)
+
+(rule "PTH annular ring"
+    (condition "A.Type == 'Pad' && A.isPlated()")
+    (constraint annular_width (min 0.20mm))
+)
+
+(rule "Hole to copper manufacturing clearance"
+    (condition "(A.Type == 'Pad' || A.Type == 'Via') && A.Net != B.Net")
+    (constraint hole_clearance (min 0.33mm))
+)
+
+(rule "Hole to hole manufacturing clearance"
+    (condition "(A.Type == 'Pad' || A.Type == 'Via') && (B.Type == 'Pad' || B.Type == 'Via')")
+    (constraint hole_to_hole (min 0.50mm))
+)
+
+(rule "Copper to board edge"
+    (condition "A.Type == 'Track' || A.Type == 'Via' || A.Type == 'Pad' || A.Type == 'Zone'")
+    (constraint edge_clearance (min 0.50mm))
+)
+
+(rule "Production silkscreen"
+    (layer "?.Silkscreen")
+    (constraint text_thickness (min 0.15mm))
+    (constraint text_height (min 0.80mm))
+)
+
+(rule "SELV 5 V power width"
+    (condition "A.Type == 'Track' && (A.NetName == 'VBUS' || A.NetName == 'GND')")
+    (constraint track_width (min 0.60mm) (opt 1.00mm))
+)
+
+(rule "Neutral auxiliary branch width"
+    (condition "A.Type == 'Track' && A.NetName == '/N (Neutral)'")
+    (constraint track_width (min 0.80mm) (opt 1.00mm))
+)
+
+(rule "Snubber internal width"
+    (condition "A.Type == 'Track' && A.NetName == 'Net-(CS1-Pad1)'")
+    (constraint track_width (min 0.50mm) (opt 0.80mm))
+)
+
+(rule "10 A live path neck minimum"
+    (condition "A.Type == 'Track' && (A.NetName == '/L (Live{slash}Line)' || A.NetName == '/L - after fuse' || A.NetName == '/L_RELAY' || A.NetName == '/L_OUT')")
+    (constraint track_width (min 1.50mm) (opt 6.00mm))
+    (constraint connection_width (min 1.50mm))
+)
+
+(rule "PE neck minimum"
+    (condition "A.Type == 'Track' && A.NetName == '/PE (Protective Earth{slash}Ground)'")
+    (constraint track_width (min 2.00mm) (opt 6.00mm))
+    (constraint connection_width (min 2.00mm))
+)
+
+(rule "10 A neutral pass-through"
+    (condition "A.fromTo('J1-2', 'J2-2')")
+    (constraint track_width (min 2.00mm) (opt 6.00mm))
+    (constraint connection_width (min 2.00mm))
+)
+
+(rule "Solid zones on high-current pads"
+    (condition "A.Type == 'Pad' && (A.Reference == 'J1' || A.Reference == 'J2' || A.Reference == 'F1' || (A.Reference == 'K1' && (A.Pad_Number == '3' || A.Pad_Number == '4' || A.Pad_Number == '5' || A.Pad_Number == '6')) || (A.Reference == 'U2' && (A.Pad_Number == '1' || A.Pad_Number == '2' || A.Pad_Number == '3' || A.Pad_Number == '4' || A.Pad_Number == '5' || A.Pad_Number == '6' || A.Pad_Number == '7' || A.Pad_Number == '8')))")
+    (constraint zone_connection solid)
+)
+
+# Hazardous mains nets, including the intermediate nodes of the
+# four-resistor voltage-sensing isolation network.
+(rule "Mains conductor separation"
+    (condition "((A.NetName == '/L (Live{slash}Line)' || A.NetName == '/L - after fuse' || A.NetName == '/L_RELAY' || A.NetName == '/L_OUT' || A.NetName == '/N (Neutral)' || A.NetName == '/PE (Protective Earth{slash}Ground)' || A.NetName == 'Net-(CS1-Pad1)' || A.NetName == 'Net-(R3-Pad2)' || A.NetName == 'Net-(R6-Pad2)') && (B.NetName == '/L (Live{slash}Line)' || B.NetName == '/L - after fuse' || B.NetName == '/L_RELAY' || B.NetName == '/L_OUT' || B.NetName == '/N (Neutral)' || B.NetName == '/PE (Protective Earth{slash}Ground)' || B.NetName == 'Net-(CS1-Pad1)' || B.NetName == 'Net-(R3-Pad2)' || B.NetName == 'Net-(R6-Pad2)') && A.Net != B.Net)")
+    (constraint clearance (min 1.50mm))
+    (constraint creepage (min 2.50mm))
+)
+
+# General 230 VAC to SELV / voltage-sense clearance outside the dedicated
+# isolation packages.  3.2 mm is deliberately conservative for a 230 VAC,
+# PD2, FR-4 board and avoids making the voltage-divider corridor unusable.
+# U2 has its own more restrictive package-local rule below.
+(rule "HV to SELV general isolation"
+    (condition "(((A.NetName == '/L (Live{slash}Line)' || A.NetName == '/L - after fuse' || A.NetName == '/L_RELAY' || A.NetName == '/L_OUT' || A.NetName == '/N (Neutral)' || A.NetName == '/PE (Protective Earth{slash}Ground)' || A.NetName == 'Net-(CS1-Pad1)' || A.NetName == 'Net-(R3-Pad2)' || A.NetName == 'Net-(R6-Pad2)') && !(B.NetName == '/L (Live{slash}Line)' || B.NetName == '/L - after fuse' || B.NetName == '/L_RELAY' || B.NetName == '/L_OUT' || B.NetName == '/N (Neutral)' || B.NetName == '/PE (Protective Earth{slash}Ground)' || B.NetName == 'Net-(CS1-Pad1)' || B.NetName == 'Net-(R3-Pad2)' || B.NetName == 'Net-(R6-Pad2)')) || ((B.NetName == '/L (Live{slash}Line)' || B.NetName == '/L - after fuse' || B.NetName == '/L_RELAY' || B.NetName == '/L_OUT' || B.NetName == '/N (Neutral)' || B.NetName == '/PE (Protective Earth{slash}Ground)' || B.NetName == 'Net-(CS1-Pad1)' || B.NetName == 'Net-(R3-Pad2)' || B.NetName == 'Net-(R6-Pad2)') && !(A.NetName == '/L (Live{slash}Line)' || A.NetName == '/L - after fuse' || A.NetName == '/L_RELAY' || A.NetName == '/L_OUT' || A.NetName == '/N (Neutral)' || A.NetName == '/PE (Protective Earth{slash}Ground)' || A.NetName == 'Net-(CS1-Pad1)' || A.NetName == 'Net-(R3-Pad2)' || A.NetName == 'Net-(R6-Pad2)')))")
+    (constraint clearance (min 3.20mm))
+    (constraint creepage (min 3.20mm))
+)
+
+# J1/J2 have certified 3.50 mm pitch geometry; the copper edge spacing
+# between adjacent pads is approximately 1.55 mm.
+(rule "Terminal block local separation"
+    (condition "((A.Reference == 'J1' || A.Reference == 'J2') || (B.Reference == 'J1' || B.Reference == 'J2')) && A.Net != B.Net")
+    (constraint clearance (min 1.50mm))
+    (constraint creepage (min 1.50mm))
+)
+
+# L_RELAY and L_OUT are the two ends of the ACS37800 internal current
+# conductor. Their voltage difference is only the sensor's millivolt drop;
+# the 1.27 mm package pitch must therefore not receive the generic 1.5 mm rule.
+(rule "ACS37800 primary pad local separation"
+    (condition "((A.NetName == '/L_RELAY' && B.NetName == '/L_OUT') || (A.NetName == '/L_OUT' && B.NetName == '/L_RELAY'))")
+    (constraint clearance (min 0.20mm))
+    (constraint creepage (min 0.20mm))
+)
+
+# Each 1206 resistor is part of the protective voltage-divider impedance.
+# These exact net pairs occur only across R4 and R6 respectively.
+(rule "Voltage divider resistor local separation"
+    (condition "((A.NetName == 'Net-(R3-Pad2)' && B.NetName == 'Net-(U2-VINP)') || (A.NetName == 'Net-(U2-VINP)' && B.NetName == 'Net-(R3-Pad2)') || (A.NetName == 'Net-(R6-Pad2)' && B.NetName == 'GND') || (A.NetName == 'GND' && B.NetName == 'Net-(R6-Pad2)'))")
+    (constraint clearance (min 1.50mm))
+    (constraint creepage (min 1.50mm))
+)
+
+# The Allegro MA recommended land pattern leaves approximately 7.2 mm
+# between the inner copper edges of the primary and signal pad rows.
+# Locally permit 7.0 mm clearance, but retain 8.0 mm creepage: use an
+# unplated PCB slot between the rows to obtain the required surface path.
+(rule "ACS37800 package primary to signal isolation"
+    (condition "((A.Reference == 'U2' && (A.NetName == '/L_RELAY' || A.NetName == '/L_OUT') && (B.NetName == 'Net-(U2-DIO_1{slash}CS)' || B.NetName == 'Net-(U2-DIO_0{slash}MOSI)' || B.NetName == 'SCL' || B.NetName == 'SDA' || B.NetName == '+3V3' || B.NetName == 'GND' || B.NetName == 'Net-(U2-VINP)')) || (B.Reference == 'U2' && (B.NetName == '/L_RELAY' || B.NetName == '/L_OUT') && (A.NetName == 'Net-(U2-DIO_1{slash}CS)' || A.NetName == 'Net-(U2-DIO_0{slash}MOSI)' || A.NetName == 'SCL' || A.NetName == 'SDA' || A.NetName == '+3V3' || A.NetName == 'GND' || A.NetName == 'Net-(U2-VINP)')))")
+    (constraint clearance (min 7.00mm))
+    (constraint creepage (min 8.00mm))
+)
+
+# --------------------------------------------------------------------------
+# ACS37800 voltage-divider corridor
+#
+# These are the only intentional bridges between the mains domain and the
+# SELV measurement domain.  Do NOT put a copper zone in this corridor:
+# route only the tracks listed below.  The exceptions are limited to the
+# exact net pairs which are separated by the specified 1206/0603 resistor.
+# The resistor voltage ratings and the two-resistors-in-series arrangement,
+# rather than PCB creepage between its own two pads, provide the insulation.
+# --------------------------------------------------------------------------
+
+(rule "Divider branch tracks - 0.30 mm"
+    (condition "A.Type == 'Track' && ((A.NetName == '/L_OUT' && A.fromTo('J2-1', 'R3')) || (A.NetName == '/N (Neutral)' && A.fromTo('J2-2', 'R7')) || A.NetName == 'Net-(R3-Pad2)' || A.NetName == 'Net-(R6-Pad2)')")
+    (constraint track_width (min 0.30mm) (opt 0.30mm))
+    (constraint connection_width (min 0.30mm))
+)
+
+# VINP and GND/VINN are measurement nodes after the protective resistor
+# strings.  This late rule overrides the 0.60 mm generic GND-power rule only
+# on the short local connections around R4, R5, R6 and U2.
+(rule "Divider SELV sense tracks - 0.20 mm"
+    (condition "A.Type == 'Track' && (A.fromTo('R4', 'U2') || A.fromTo('R4', 'R5') || A.fromTo('R5', 'U2') || A.fromTo('R5', 'R6') || A.fromTo('R6', 'U2'))")
+    (constraint track_width (min 0.20mm) (opt 0.25mm))
+    (constraint connection_width (min 0.20mm))
+)
+
+# Allow the normal component-pad geometry across each resistor in the
+# divider.  This prevents clearance arcs/semicircles from destroying the
+# local pour.  It must not be used as a general mains-to-SELV rule.
+(rule "Divider resistor terminal pad-pair exception"
+    (condition "((A.NetName == '/L_OUT' && B.NetName == 'Net-(R3-Pad2)') || (B.NetName == '/L_OUT' && A.NetName == 'Net-(R3-Pad2)') || (A.NetName == 'Net-(R3-Pad2)' && B.NetName == 'Net-(U2-VINP)') || (B.NetName == 'Net-(R3-Pad2)' && A.NetName == 'Net-(U2-VINP)') || (A.NetName == 'Net-(U2-VINP)' && B.NetName == 'GND') || (B.NetName == 'Net-(U2-VINP)' && A.NetName == 'GND') || (A.NetName == 'GND' && B.NetName == 'Net-(R6-Pad2)') || (B.NetName == 'GND' && A.NetName == 'Net-(R6-Pad2)') || (A.NetName == 'Net-(R6-Pad2)' && B.NetName == '/N (Neutral)') || (B.NetName == 'Net-(R6-Pad2)' && A.NetName == '/N (Neutral)'))")
+    (constraint clearance (min 0.20mm))
+    (constraint creepage (min 0.20mm))
+)
+
+# The following last rules override the high-current width rules only on the
+# low-current branches feeding the voltage divider.  They do not apply to the
+# 10 A path between J1, K1, U2 primary pins and J2.
+(rule "Divider HV branch width"
+    (condition "A.Type == 'Track' && (A.NetName == 'Net-(R3-Pad2)' || A.NetName == 'Net-(R6-Pad2)' || (A.NetName == '/L_OUT' && A.fromTo('R3', 'U2')) || (A.NetName == '/N (Neutral)' && A.fromTo('R7', 'J2-2')))")
+    (constraint track_width (min 0.30mm) (opt 0.30mm))
+    (constraint connection_width (min 0.30mm))
+)
+
+# VINP and the local GND/VINN return are low-current measurement traces.
+# The condition is intentionally restricted to routes between U2 and the
+# divider components so the 5 V / general GND distribution remains wide.
+(rule "Divider measurement trace width"
+    (condition "A.Type == 'Track' && (A.fromTo('R4', 'U2') || A.fromTo('R4', 'R5') || A.fromTo('R5', 'R6') || A.fromTo('R6', 'U2'))")
+    (constraint track_width (min 0.20mm) (opt 0.25mm))
+    (constraint connection_width (min 0.20mm))
+)

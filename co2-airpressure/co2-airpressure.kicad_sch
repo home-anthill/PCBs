@@ -2912,7 +2912,7 @@
 				)
 			)
 		)
-		(property "Assembly Notes" "Male 1x4 2.54 mm header, mount on bottom side, mating pins facing downward; observe pin 1."
+		(property "Assembly Notes" "Male 1x4 2.54 mm header, mount on bottom side, mating pins facing downward"
 			(at 91.44 68.58 0)
 			(hide yes)
 			(show_name no)
@@ -3716,7 +3716,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://ae-bst.resource.bosch.com/media/_tech/media/datasheets/BST-BME680-DS001.pdf"
+		(property "Datasheet" "https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bme688-ds000.pdf"
 			(at 165.1 133.35 0)
 			(hide yes)
 			(show_name no)

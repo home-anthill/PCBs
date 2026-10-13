@@ -2695,17 +2695,6 @@
 				)
 			)
 		)
-		(property "PCBWay Part Number" ""
-			(at 223.52 138.43 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Sim.Device" ""
 			(at 223.52 138.43 0)
 			(hide yes)
@@ -2718,6 +2707,17 @@
 			)
 		)
 		(property "Sim.Pins" ""
+			(at 223.52 138.43 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PCBWay Part Number" ""
 			(at 223.52 138.43 0)
 			(hide yes)
 			(show_name no)
@@ -3077,6 +3077,17 @@
 				)
 			)
 		)
+		(property "PCBWay Part Number" ""
+			(at 205.74 111.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "4a195d0f-6680-48f0-a158-820edafaf6a6")
 		)
@@ -3236,17 +3247,6 @@
 				)
 			)
 		)
-		(property "PCBWay Part Number" ""
-			(at 203.2 170.18 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Sim.Device" ""
 			(at 203.2 170.18 0)
 			(hide yes)
@@ -3259,6 +3259,17 @@
 			)
 		)
 		(property "Sim.Pins" ""
+			(at 203.2 170.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PCBWay Part Number" ""
 			(at 203.2 170.18 0)
 			(hide yes)
 			(show_name no)
@@ -3502,17 +3513,6 @@
 				)
 			)
 		)
-		(property "PCBWay Part Number" ""
-			(at 179.07 175.26 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Sim.Device" ""
 			(at 179.07 175.26 90)
 			(hide yes)
@@ -3525,6 +3525,17 @@
 			)
 		)
 		(property "Sim.Pins" ""
+			(at 179.07 175.26 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PCBWay Part Number" ""
 			(at 179.07 175.26 90)
 			(hide yes)
 			(show_name no)
@@ -3851,17 +3862,6 @@
 				)
 			)
 		)
-		(property "PCBWay Part Number" ""
-			(at 226.06 189.23 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Sim.Device" ""
 			(at 226.06 189.23 0)
 			(hide yes)
@@ -3874,6 +3874,17 @@
 			)
 		)
 		(property "Sim.Pins" ""
+			(at 226.06 189.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PCBWay Part Number" ""
 			(at 226.06 189.23 0)
 			(hide yes)
 			(show_name no)
@@ -4043,6 +4054,17 @@
 				)
 			)
 		)
+		(property "PCBWay Part Number" ""
+			(at 262.89 118.11 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "87b8c168-40a0-48d2-ac4f-9fa92d023d2a")
 		)
@@ -4199,17 +4221,6 @@
 				)
 			)
 		)
-		(property "PCBWay Part Number" ""
-			(at 203.2 189.23 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Sim.Device" ""
 			(at 203.2 189.23 0)
 			(hide yes)
@@ -4222,6 +4233,17 @@
 			)
 		)
 		(property "Sim.Pins" ""
+			(at 203.2 189.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PCBWay Part Number" ""
 			(at 203.2 189.23 0)
 			(hide yes)
 			(show_name no)
@@ -4391,6 +4413,17 @@
 				)
 			)
 		)
+		(property "PCBWay Part Number" ""
+			(at 200.66 111.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "4917ea58-fdb4-479c-8d8e-b5c3a7e048c5")
 		)
@@ -4548,17 +4581,6 @@
 				)
 			)
 		)
-		(property "PCBWay Part Number" ""
-			(at 243.84 182.88 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Sim.Device" ""
 			(at 243.84 182.88 90)
 			(hide yes)
@@ -4571,6 +4593,17 @@
 			)
 		)
 		(property "Sim.Pins" ""
+			(at 243.84 182.88 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PCBWay Part Number" ""
 			(at 243.84 182.88 90)
 			(hide yes)
 			(show_name no)
@@ -4740,6 +4773,17 @@
 				)
 			)
 		)
+		(property "PCBWay Part Number" ""
+			(at 160.02 179.07 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "366ddbc9-8ce6-40cd-a50f-05a9ad53c5fb")
 		)
@@ -4811,7 +4855,7 @@
 				)
 			)
 		)
-		(property "Description" "Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)"
+		(property "Description" "Generic connector, single row, 01x04"
 			(at 124.46 138.43 0)
 			(hide yes)
 			(show_name no)
@@ -4866,7 +4910,7 @@
 				)
 			)
 		)
-		(property "Assembly Notes" "Male 1x4 2.54 mm header, mount on bottom side, mating pins facing downward; observe pin 1."
+		(property "Assembly Notes" "Male 1x4 2.54 mm header, mount on bottom side, mating pins facing downward"
 			(at 124.46 138.43 0)
 			(hide yes)
 			(show_name no)
@@ -4910,18 +4954,7 @@
 				)
 			)
 		)
-		(property "LCSC Part #" ""
-			(at 124.46 138.43 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "PCBWay Part Number" ""
+		(property "LCSC Part #" "C3330291"
 			(at 124.46 138.43 0)
 			(hide yes)
 			(show_name no)
@@ -4944,6 +4977,17 @@
 			)
 		)
 		(property "Sim.Pins" ""
+			(at 124.46 138.43 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PCBWay Part Number" ""
 			(at 124.46 138.43 0)
 			(hide yes)
 			(show_name no)
@@ -5195,17 +5239,6 @@
 				)
 			)
 		)
-		(property "PCBWay Part Number" ""
-			(at 179.07 182.88 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Sim.Device" ""
 			(at 179.07 182.88 90)
 			(hide yes)
@@ -5218,6 +5251,17 @@
 			)
 		)
 		(property "Sim.Pins" ""
+			(at 179.07 182.88 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PCBWay Part Number" ""
 			(at 179.07 182.88 90)
 			(hide yes)
 			(show_name no)
@@ -5652,7 +5696,7 @@
 				)
 			)
 		)
-		(property "Digi-Key Part Number" ""
+		(property "Digi-Key Part Number" "277-1273-ND"
 			(at 271.78 180.34 0)
 			(hide yes)
 			(show_name no)
@@ -5663,7 +5707,7 @@
 				)
 			)
 		)
-		(property "Mouser Part Number" ""
+		(property "Mouser Part Number" "651-1725656"
 			(at 271.78 180.34 0)
 			(hide yes)
 			(show_name no)
@@ -5674,7 +5718,7 @@
 				)
 			)
 		)
-		(property "LCSC Part #" ""
+		(property "LCSC Part #" "C3029316"
 			(at 271.78 180.34 0)
 			(hide yes)
 			(show_name no)
@@ -5686,17 +5730,6 @@
 			)
 		)
 		(property "Assembly Notes" ""
-			(at 271.78 180.34 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "PCBWay Part Number" ""
 			(at 271.78 180.34 0)
 			(hide yes)
 			(show_name no)
@@ -5719,6 +5752,17 @@
 			)
 		)
 		(property "Sim.Pins" ""
+			(at 271.78 180.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PCBWay Part Number" ""
 			(at 271.78 180.34 0)
 			(hide yes)
 			(show_name no)
@@ -5919,7 +5963,7 @@
 				)
 			)
 		)
-		(property "Digi-Key Part Number" ""
+		(property "Digi-Key Part Number" "490-1011-1-ND"
 			(at 243.84 175.26 0)
 			(hide yes)
 			(show_name no)
@@ -5930,7 +5974,7 @@
 				)
 			)
 		)
-		(property "Mouser Part Number" ""
+		(property "Mouser Part Number" "81-BLM11A121S"
 			(at 243.84 175.26 0)
 			(hide yes)
 			(show_name no)
@@ -5941,7 +5985,7 @@
 				)
 			)
 		)
-		(property "LCSC Part #" ""
+		(property "LCSC Part #" "C76892"
 			(at 243.84 175.26 0)
 			(hide yes)
 			(show_name no)
@@ -5963,17 +6007,6 @@
 				)
 			)
 		)
-		(property "PCBWay Part Number" ""
-			(at 243.84 175.26 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Sim.Device" ""
 			(at 243.84 175.26 90)
 			(hide yes)
@@ -5986,6 +6019,17 @@
 			)
 		)
 		(property "Sim.Pins" ""
+			(at 243.84 175.26 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PCBWay Part Number" ""
 			(at 243.84 175.26 90)
 			(hide yes)
 			(show_name no)
