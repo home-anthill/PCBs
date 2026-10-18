@@ -4399,6 +4399,16 @@
 		)
 		(uuid "e5d69e3d-ca73-44a0-a995-28bb1d077655")
 	)
+	(label "GPIO17"
+		(at 91.44 64.77 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "e8197759-80d4-4eab-81af-09743c4ea33d")
+	)
 	(label "SCL"
 		(at 91.44 59.69 0)
 		(fields_autoplaced yes)

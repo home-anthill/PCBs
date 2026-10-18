@@ -1,0 +1,4 @@
+(sym_lib_table
+	(version 7)
+	(lib (name "OPA2320AIDR") (type "KiCad") (uri "${KIPRJMOD}/libraries/OPA2320AIDR.kicad_sym") (options "") (descr ""))
+)

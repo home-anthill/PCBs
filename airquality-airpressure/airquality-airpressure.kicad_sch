@@ -5,8 +5,8 @@
 	(uuid "c5d83665-dc0b-4e70-8f34-66b5c0b35c6d")
 	(paper "A4")
 	(title_block
-		(title "co2-airpressure")
-		(date "2026-08-14")
+		(title "airquality-airpressure")
+		(date "2026-10-18")
 		(rev "v1.0")
 		(company "Stefano Cappa")
 	)
@@ -2039,7 +2039,7 @@
 			(uuid "f4091e7e-d32a-469c-9131-31649277e43b")
 		)
 		(instances
-			(project "co2-airpressure"
+			(project "airquality-airpressure"
 				(path "/c5d83665-dc0b-4e70-8f34-66b5c0b35c6d"
 					(reference "C4")
 					(unit 1)
@@ -2246,7 +2246,7 @@
 			(uuid "98825d9b-77fa-4387-93ff-a398c95acb2b")
 		)
 		(instances
-			(project "co2-airpressure"
+			(project "airquality-airpressure"
 				(path "/c5d83665-dc0b-4e70-8f34-66b5c0b35c6d"
 					(reference "U1")
 					(unit 1)
@@ -2323,7 +2323,7 @@
 			(uuid "11a3694f-dd79-4f8f-b5c1-b820f290d16d")
 		)
 		(instances
-			(project "co2-airpressure"
+			(project "airquality-airpressure"
 				(path "/c5d83665-dc0b-4e70-8f34-66b5c0b35c6d"
 					(reference "#PWR09")
 					(unit 1)
@@ -2401,7 +2401,7 @@
 			(uuid "af1e577e-05a5-4635-930f-e6da81ac099e")
 		)
 		(instances
-			(project "co2-airpressure"
+			(project "airquality-airpressure"
 				(path "/c5d83665-dc0b-4e70-8f34-66b5c0b35c6d"
 					(reference "#PWR08")
 					(unit 1)
@@ -2479,7 +2479,7 @@
 			(uuid "c541a0c1-f929-48a2-88dc-0f2d909544c2")
 		)
 		(instances
-			(project "co2-airpressure"
+			(project "airquality-airpressure"
 				(path "/c5d83665-dc0b-4e70-8f34-66b5c0b35c6d"
 					(reference "#FLG01")
 					(unit 1)
@@ -2557,7 +2557,7 @@
 			(uuid "90304f52-f22a-4711-aee1-0c4bf451aa39")
 		)
 		(instances
-			(project "co2-airpressure"
+			(project "airquality-airpressure"
 				(path "/c5d83665-dc0b-4e70-8f34-66b5c0b35c6d"
 					(reference "#FLG02")
 					(unit 1)
@@ -2737,7 +2737,7 @@
 			(uuid "d7a04a1b-74a9-4982-a610-013d588ff112")
 		)
 		(instances
-			(project "co2-airpressure"
+			(project "airquality-airpressure"
 				(path "/c5d83665-dc0b-4e70-8f34-66b5c0b35c6d"
 					(reference "C1")
 					(unit 1)
@@ -2815,7 +2815,7 @@
 			(uuid "127b4fd4-e9b8-4a22-9405-585da2046ccb")
 		)
 		(instances
-			(project "co2-airpressure"
+			(project "airquality-airpressure"
 				(path "/c5d83665-dc0b-4e70-8f34-66b5c0b35c6d"
 					(reference "#PWR010")
 					(unit 1)
@@ -3013,7 +3013,7 @@
 			(uuid "ec2955f0-ca86-4d47-a28e-6ea2a0df00f7")
 		)
 		(instances
-			(project "co2-airpressure"
+			(project "airquality-airpressure"
 				(path "/c5d83665-dc0b-4e70-8f34-66b5c0b35c6d"
 					(reference "J1")
 					(unit 1)
@@ -3172,7 +3172,7 @@
 			(uuid "a99c4dca-e458-49d8-b65b-9c85083bc4bf")
 		)
 		(instances
-			(project "co2-airpressure"
+			(project "airquality-airpressure"
 				(path "/c5d83665-dc0b-4e70-8f34-66b5c0b35c6d"
 					(reference "C3")
 					(unit 1)
@@ -3352,7 +3352,7 @@
 			(uuid "c08625b6-8814-4664-a302-9b4a9af43104")
 		)
 		(instances
-			(project "co2-airpressure"
+			(project "airquality-airpressure"
 				(path "/c5d83665-dc0b-4e70-8f34-66b5c0b35c6d"
 					(reference "C2")
 					(unit 1)
@@ -3429,7 +3429,7 @@
 			(uuid "042652fe-1cda-40f9-8518-6f6aa6b64805")
 		)
 		(instances
-			(project "co2-airpressure"
+			(project "airquality-airpressure"
 				(path "/c5d83665-dc0b-4e70-8f34-66b5c0b35c6d"
 					(reference "#PWR011")
 					(unit 1)
@@ -3507,7 +3507,7 @@
 			(uuid "dbdb8bbd-dcbe-4419-952a-ea2e574c13e7")
 		)
 		(instances
-			(project "co2-airpressure"
+			(project "airquality-airpressure"
 				(path "/c5d83665-dc0b-4e70-8f34-66b5c0b35c6d"
 					(reference "#PWR04")
 					(unit 1)
@@ -3585,7 +3585,7 @@
 			(uuid "1b8f48fe-42b9-4d03-8381-b4df7900fb24")
 		)
 		(instances
-			(project "co2-airpressure"
+			(project "airquality-airpressure"
 				(path "/c5d83665-dc0b-4e70-8f34-66b5c0b35c6d"
 					(reference "#PWR07")
 					(unit 1)
@@ -3663,7 +3663,7 @@
 			(uuid "13053feb-8090-4baa-a6d5-cc284f2809ec")
 		)
 		(instances
-			(project "co2-airpressure"
+			(project "airquality-airpressure"
 				(path "/c5d83665-dc0b-4e70-8f34-66b5c0b35c6d"
 					(reference "#PWR01")
 					(unit 1)
@@ -3873,7 +3873,7 @@
 			(uuid "988d0de0-cf07-4ab4-a5b9-56af7849515c")
 		)
 		(instances
-			(project "co2-airpressure"
+			(project "airquality-airpressure"
 				(path "/c5d83665-dc0b-4e70-8f34-66b5c0b35c6d"
 					(reference "U2")
 					(unit 1)
@@ -3950,7 +3950,7 @@
 			(uuid "39ecadf4-1845-4f63-9d1e-e8f63a29741a")
 		)
 		(instances
-			(project "co2-airpressure"
+			(project "airquality-airpressure"
 				(path "/c5d83665-dc0b-4e70-8f34-66b5c0b35c6d"
 					(reference "#PWR012")
 					(unit 1)
