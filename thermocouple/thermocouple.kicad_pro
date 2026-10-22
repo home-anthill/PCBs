@@ -861,7 +861,7 @@
         "uuid": "c5d83665-dc0b-4e70-8f34-66b5c0b35c6d"
       }
     ],
-    "used_designators": "SHIELD1,#PWR1-29,#FLG1-3",
+    "used_designators": "#FLG1-3,#PWR1-29,SHIELD1",
     "variants": []
   },
   "sheets": [
