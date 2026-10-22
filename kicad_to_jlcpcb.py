@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-"""Converti il CSV posizioni KiCad nel formato XLSX del modello CPL JLCPCB.
+"""Convert a KiCad position CSV to the JLCPCB CPL template's XLSX format.
 
-Dipendenza: python3 -m pip install openpyxl
-Uso: python3 kicad_to_jlcpcb.py scheda-all-pos.csv [-o scheda-CPL.xlsx]
+Dependency: python3 -m pip install openpyxl
+Usage: python3 kicad_to_jlcpcb.py board-all-pos.csv [-o board-CPL.xlsx]
 
-Le coordinate KiCad sono considerate mm, salvo --units in. Non vengono
-specchiati assi, spostata l'origine o applicate correzioni ai footprint.
+KiCad coordinates are assumed to be in mm unless --units in is specified.
+No axes are mirrored, the origin is not shifted, and no footprint corrections are applied.
 """
 
 import argparse
@@ -27,7 +27,7 @@ def number(value, line, field):
             raise InvalidOperation
         return result
     except (InvalidOperation, AttributeError):
-        raise ValueError(f"Riga {line}: {field} non è un numero finito: {value!r}") from None
+        raise ValueError(f"Line {line}: {field} is not a finite number: {value!r}") from None
 
 
 def mm_text(value):
@@ -45,28 +45,28 @@ def read_positions(path, units="mm"):
     with Path(path).open(encoding="utf-8-sig", newline="") as stream:
         reader = csv.DictReader(stream, strict=True)
         if not reader.fieldnames:
-            raise ValueError("CSV vuoto o privo di intestazioni.")
+            raise ValueError("CSV is empty or has no headers.")
         reader.fieldnames = [h.strip() for h in reader.fieldnames]
         if len(set(reader.fieldnames)) != len(reader.fieldnames):
-            raise ValueError("Intestazioni CSV duplicate.")
+            raise ValueError("Duplicate CSV headers.")
         missing = set(REQUIRED) - set(reader.fieldnames)
         if missing:
-            raise ValueError("Colonne mancanti: " + ", ".join(sorted(missing)))
+            raise ValueError("Missing columns: " + ", ".join(sorted(missing)))
         for row in reader:
             line = reader.line_num
             if None in row or any(v is None for v in row.values()):
-                raise ValueError(f"Riga {line}: numero di colonne errato.")
+                raise ValueError(f"Line {line}: incorrect number of columns.")
             if not any(v.strip() for v in row.values()):
                 continue
             ref = row["Ref"].strip()
             if not ref:
-                raise ValueError(f"Riga {line}: Ref vuoto.")
+                raise ValueError(f"Line {line}: Ref is empty.")
             if ref.casefold() in seen:
-                raise ValueError(f"Riga {line}: riferimento duplicato {ref!r}.")
+                raise ValueError(f"Line {line}: duplicate reference {ref!r}.")
             seen.add(ref.casefold())
             side = row["Side"].strip().lower()
             if side not in ("top", "bottom"):
-                raise ValueError(f"Riga {line}: Side deve essere top o bottom, ricevuto {side!r}.")
+                raise ValueError(f"Line {line}: Side must be top or bottom, got {side!r}.")
             x = number(row["PosX"], line, "PosX") * factor
             y = number(row["PosY"], line, "PosY") * factor
             rotation = number(row["Rot"], line, "Rot") % 360
@@ -74,7 +74,7 @@ def read_positions(path, units="mm"):
                 rotation += 360
             rows.append((ref, mm_text(x), mm_text(y), side.title(), float(rotation)))
     if not rows:
-        raise ValueError("Il CSV non contiene componenti.")
+        raise ValueError("CSV contains no components.")
     return rows
 
 
@@ -83,19 +83,19 @@ def write_workbook(rows, output, force=False):
         from openpyxl import Workbook
         from openpyxl.styles import Font
     except ImportError:
-        raise ValueError("Manca openpyxl. Installalo con: python3 -m pip install openpyxl") from None
+        raise ValueError("openpyxl is missing. Install it with: python3 -m pip install openpyxl") from None
     output = Path(output)
     if output.suffix.lower() != ".xlsx":
-        raise ValueError("Il file di output deve avere estensione .xlsx.")
+        raise ValueError("The output file must have an .xlsx extension.")
     if output.exists() and not force:
-        raise ValueError(f"Il file esiste già: {output}. Usa --force per sostituirlo.")
+        raise ValueError(f"File already exists: {output}. Use --force to replace it.")
     workbook = Workbook()
     sheet = workbook.active
     sheet.title = "Sheet1"
     sheet.append(HEADERS)
     for row in rows:
         sheet.append(row)
-        # Forza testo letterale: un riferimento non deve diventare una formula.
+        # Force literal text: a reference must not become a formula.
         for cell in sheet[sheet.max_row][:4]:
             cell.data_type = "s"
     for cell in sheet[1]:
@@ -104,7 +104,7 @@ def write_workbook(rows, output, force=False):
         sheet.column_dimensions[column].width = width
     for cells in sheet.iter_rows(min_row=2, min_col=5, max_col=5):
         cells[0].number_format = "General"
-    # Un errore di scrittura non deve lasciare un XLSX parziale.
+    # A write error must not leave a partial XLSX file.
     temp_path = None
     try:
         with tempfile.NamedTemporaryFile(dir=output.parent, suffix=".xlsx", delete=False) as tmp:
@@ -113,7 +113,7 @@ def write_workbook(rows, output, force=False):
         if force:
             os.replace(temp_path, output)
         else:
-            # Pubblicazione senza sovrascrivere nemmeno in caso di creazione concorrente.
+            # Publish without overwriting, even if another process creates the file concurrently.
             os.link(temp_path, output)
     finally:
         workbook.close()
@@ -123,22 +123,22 @@ def write_workbook(rows, output, force=False):
 
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument("input", type=Path, help="CSV posizioni esportato da KiCad")
-    parser.add_argument("-o", "--output", type=Path, help="Destinazione (default: <input>-JLCPCB.xlsx)")
-    parser.add_argument("--units", choices=("mm", "in"), default="mm", help="Unità del CSV KiCad, default mm")
-    parser.add_argument("--force", action="store_true", help="Sostituisci un XLSX già esistente")
+    parser.add_argument("input", type=Path, help="Position CSV exported from KiCad")
+    parser.add_argument("-o", "--output", type=Path, help="Output path (default: <input>-JLCPCB.xlsx)")
+    parser.add_argument("--units", choices=("mm", "in"), default="mm", help="KiCad CSV units, default mm")
+    parser.add_argument("--force", action="store_true", help="Replace an existing XLSX file")
     args = parser.parse_args(argv)
     output = args.output or args.input.with_name(args.input.stem + "-JLCPCB.xlsx")
     try:
         if output.resolve() == args.input.resolve():
-            raise ValueError("Input e output devono essere file diversi.")
+            raise ValueError("Input and output must be different files.")
         rows = read_positions(args.input, args.units)
         write_workbook(rows, output, args.force)
     except (OSError, ValueError, csv.Error, UnicodeError, InvalidOperation) as exc:
-        print(f"Errore: {exc}", file=sys.stderr)
+        print(f"Error: {exc}", file=sys.stderr)
         return 1
-    print(f"Creato: {output.resolve()} ({len(rows)} componenti)")
-    print("Coordinate preservate; rotazioni normalizzate in [0, 360). Verifica orientamenti nell'anteprima JLCPCB.")
+    print(f"Created: {output.resolve()} ({len(rows)} components)")
+    print("Coordinates preserved; rotations normalized to [0, 360). Check orientations in the JLCPCB preview.")
     return 0
 
 
