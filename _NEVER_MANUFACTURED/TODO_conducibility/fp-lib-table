@@ -1,4 +1,0 @@
-(fp_lib_table
-	(version 7)
-	(lib (name "conducibility_footprints_lib") (type "KiCad") (uri "${KIPRJMOD}/libraries/conducibility-footprints-kicad.pretty") (options "") (descr ""))
-)
