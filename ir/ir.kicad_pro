@@ -178,6 +178,7 @@
         {
           "td_allow_use_two_tracks": false,
           "td_curve_segcount": 0,
+          "td_enabled": false,
           "td_height_ratio": 1.0,
           "td_length_ratio": 0.5,
           "td_maxheight": 1.0,
@@ -189,6 +190,7 @@
         {
           "td_allow_use_two_tracks": false,
           "td_curve_segcount": 0,
+          "td_enabled": false,
           "td_height_ratio": 1.0,
           "td_length_ratio": 0.5,
           "td_maxheight": 1.0,
@@ -200,6 +202,7 @@
         {
           "td_allow_use_two_tracks": false,
           "td_curve_segcount": 0,
+          "td_enabled": false,
           "td_height_ratio": 1.0,
           "td_length_ratio": 0.5,
           "td_maxheight": 1.0,
@@ -489,6 +492,7 @@
       "pin_to_pin": "error",
       "power_pin_not_driven": "error",
       "same_local_global_label": "warning",
+      "same_local_global_power": "warning",
       "similar_label_and_power": "warning",
       "similar_labels": "warning",
       "similar_power": "warning",
@@ -557,19 +561,10 @@
     "meta": {
       "version": 5
     },
-    "net_colors": null,
+    "net_colors": {},
     "netclass_assignments": {
       "/GPIO17": [
         "GPIO17"
-      ],
-      "/GPIO5": [
-        "GPIO5"
-      ],
-      "/SCL": [
-        "SCL"
-      ],
-      "/SDA": [
-        "SDA"
       ]
     },
     "netclass_patterns": [
@@ -830,7 +825,7 @@
         "uuid": "c5d83665-dc0b-4e70-8f34-66b5c0b35c6d"
       }
     ],
-    "used_designators": "#PWR1-29,#FLG1-2",
+    "used_designators": "#FLG1-2,#PWR1-29",
     "variants": []
   },
   "sheets": [
